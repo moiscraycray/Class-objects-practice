@@ -1,3 +1,3 @@
-# Fuzzy Friends
+# Class practice
 
-This app was created for me to practice for creating and using classes and objects.
+These apps were created for me to practice for creating and using classes and objects.
