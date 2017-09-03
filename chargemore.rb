@@ -17,8 +17,11 @@ class Employee
   end
 
   def initialize(name = "Anonymous", salary = 0.0)
-    @name = name
-    @salary = salary
+    self.name = name # name = is the same as calling name=
+    self.salary = salary # same principle as above. self points to the object/instance (amy) itself
+    # have to use 'self' because there'll be an error if we do amy.name = name
+    # amy is not in scope
+    # Ruby definitely knows 'self.name=name' is a call to the 'name=' method
   end
 
   def print_pay_stub
@@ -29,6 +32,5 @@ class Employee
 
 end
 
-Employee.new("Jane Doe", 50_000).print_pay_stub
-Employee.new("Jane Doe").print_pay_stub
-Employee.new.print_pay_stub
+amy = Employee.new("Amy Blake", 50_000) #Try invalid arguments to test the methods name= and salary=
+amy.print_pay_stub
