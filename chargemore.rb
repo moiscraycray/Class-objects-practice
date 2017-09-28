@@ -1,6 +1,10 @@
 class Employee
 
-  attr_reader :name #getter
+  attr_reader :name # getter
+
+  def initialize(name = "Anonymous") # Here, we are making parameters optional by providing defaults
+    self.name = name # name = is the same as calling name=
+  end
 
   # validation: the following ensures valid arguments are given
   def name=(name) #setter
@@ -22,7 +26,7 @@ class SalariedEmployee < Employee
   attr_reader :name, :salary
 
   def initialize(name = "Anonymous", salary = 0.0) # Here, we are making parameters optional by providing defaults
-    self.name = name # name = is the same as calling name=
+    super(name) # call 'initialize' in Employee, passing only the name
     self.salary = salary # same principle as above. self points to the object/instance (amy) itself
     # we have to use 'self' because there'll be an error if we do amy.name = name
     # also, amy (instance) is not in scope so we use 'self' to refer to the class itself
